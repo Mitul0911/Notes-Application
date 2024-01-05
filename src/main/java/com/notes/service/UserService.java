@@ -9,11 +9,13 @@ import com.notes.response.Response;
 import com.notes.response.ResponseHandler;
 import com.notes.tools.JwtTools;
 import com.notes.tools.UserTools;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class UserService implements ResponseHandler {
 
     @Autowired
@@ -33,7 +35,8 @@ public class UserService implements ResponseHandler {
                     && StringUtils.isNotBlank(firstName)
                     && StringUtils.isNotBlank(password)
                     && StringUtils.isNotBlank(confirmPassword)) {
-                if (!new QUserDomain().userName.eq(userName).exists()) {
+                QUserDomain qUserDomain = new QUserDomain();
+                if (!qUserDomain.userName.eq(userName).exists()) {
                     if (password.equals(confirmPassword)) {
                         UserDomain userDomain = new UserDomain();
                         userDomain.setFirstName(firstName);
