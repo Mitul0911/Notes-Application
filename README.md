@@ -216,7 +216,7 @@ ERROR STRUCTURE:
 
 -> Configure the PostgreSQL database settings in application.properties
 
--> Run the application using your preferred method 
+-> Run the application using your preferred method (mvn spring-boot:run or try any IDE)
 
 
 # Use the below postman collection for testing:
