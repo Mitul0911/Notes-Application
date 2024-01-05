@@ -212,9 +212,9 @@ ERROR STRUCTURE:
 # Getting Started
 
 
--> Clone the repository.
+-> Clone the repository - git clone https://github.com/Mitul0911/Notes-Application.git
 
--> Configure the PostgreSQL database settings in application.properties.
+-> Configure the PostgreSQL database settings in application.properties
 
 -> Run the application using your preferred method 
 
