@@ -35,8 +35,7 @@ public class UserService implements ResponseHandler {
                     && StringUtils.isNotBlank(firstName)
                     && StringUtils.isNotBlank(password)
                     && StringUtils.isNotBlank(confirmPassword)) {
-                QUserDomain qUserDomain = new QUserDomain();
-                if (!qUserDomain.userName.eq(userName).exists()) {
+                if (!new QUserDomain().userName.eq(userName).exists()) {
                     if (password.equals(confirmPassword)) {
                         UserDomain userDomain = new UserDomain();
                         userDomain.setFirstName(firstName);
